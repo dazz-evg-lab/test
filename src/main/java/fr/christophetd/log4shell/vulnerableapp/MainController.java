@@ -13,10 +13,16 @@ public class MainController {
 
     private static final Logger logger = LogManager.getLogger("HelloWorld");
 
+    /**
+     * Handles HTTP GET requests to "/" and returns a greeting message.
+     *
+     * @param apiVersion the value of the "X-Api-Version" request header
+     * @return the greeting string "Hello, world"
+     */
     @GetMapping("/")
     public String index(@RequestHeader("X-Api-Version") String apiVersion) {
         logger.info("Received a request for API version " + apiVersion);
-        return "Hello, world!";
+        return "Hello, world";
     }
 
 }
